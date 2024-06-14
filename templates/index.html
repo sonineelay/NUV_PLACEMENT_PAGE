@@ -1,0 +1,394 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!-- Welcome Section -->
+<div class="welcome-section row p-0 m-0">
+     <div class="col-xl-3 d-xl-block d-none">
+          <img src="/static/images/welcome1.gif" width="500" class="img-fluid mb-4" alt="Welcome GIF">
+     </div>
+     <div class="col-xl-6 text-center ">
+          <div class="p-2">
+               <h1 class="display-4 mb-4 fw-bold">Welcome To Nuv CDC Page</h1>
+               <p class="lead fw-bold">When You are At NUV You Are <span class="text-primary">Well Placed</span></p>
+               <button type="button" class="btn btn-outline-nuv w-50 rounded-0" data-bs-toggle="modal"
+                    data-bs-target="#contactModal">
+                    Contact Us
+               </button>
+          </div>
+     </div>
+     <div class="col-xl-3 d-xl-block d-none">
+          <img src="/static/images/welcome2.gif" width="500" class="img-fluid mb-4" alt="Welcome GIF">
+     </div>
+</div>
+
+<!-- Placement At a Glance -->
+<div class="container-fluid mb-5 px-5">
+     <h3>Placement Details in Glance</h3>
+     <div class="row m-0" id="chart-container">
+          <!-- Charts For Placement At A Glance -->
+     </div>
+</div>
+
+<!-- Top Recruiters -->
+<div class="container-fluid mb-5 px-5">
+     <h3>Top Recruiters</h3>
+     <div id="logoCarousel" class="carousel slide" data-bs-ride="carousel">
+          <!-- Indicators -->
+          <div class="carousel-indicators m-2" id="carouselIndicators">
+               <!-- Indicators will be inserted dynamically -->
+          </div>
+
+          <div class="carousel-inner m-2" id="carouselInner">
+               <!-- Carousel items will be inserted dynamically -->
+          </div>
+
+          <!-- Controls -->
+          <a class="carousel-control-prev control-btns" href="#logoCarousel" role="button" data-bs-slide="prev">
+               <i class="bi bi-chevron-double-left"></i>
+          </a>
+          <a class="carousel-control-next control-btns" href="#logoCarousel" role="button" data-bs-slide="next">
+               <i class="bi bi-chevron-double-right"></i>
+          </a>
+     </div>
+</div>
+
+<!-- Testimonials -->
+<div class="container-fluid mb-5 px-5">
+     <h3>Testimonials</h3>
+     <div class="container d-flex justify-content-center">
+          <img src="/static/images/testimonials/TOP.jpg" width="500"
+               style="border: 5px solid var(--nuv-bg);margin: 20px;">
+     </div>
+     <div class="row" id="insta-container">
+          <!-- POSTS WILL BE SHOWN HERE -->
+     </div>
+</div>
+
+<!-- About CDC -->
+<div class="container-fluid mb-5 px-5">
+     <h3>Career Development Center @ NUV</h3>
+     <div class="row">
+          <div class="col-md-9 fw-bold">
+               <span class="content-tag">
+                    Navrachana University has always remained a preferred destination to hire fresh talent because of
+                    its highly professional student quality, industry-aligned curriculum, highly qualified & experienced
+                    faculties, Research facilities and strong industry connections.
+               </span>
+
+               <span class="content-tag">
+                    Navrachana University's placement process is designed to make recruitment easy and flexible to
+                    optimize students' success. We help students find the right opportunities based on their interests
+                    and aptitude and by matching them with recruiting organizations' requirements.
+               </span>
+
+               <span class="content-tag">
+                    A thoughtfully designed and carefully nurtured vibrant campus culture ensures that students turn
+                    into well-rounded and sought-after professionals, while experiencing some of the best times of their
+                    lives.
+               </span>
+
+               <span class="content-tag">
+                    With more than 500+ national and multinational recruiters on board, NUVites have plenty to choose
+                    from, if they don't become job creators themselves. So, WHEN YOU ARE AT NUV, YOU ARE #WellPlaced
+               </span>
+          </div>
+          <div class="col-md-3 d-flex justify-content-center">
+               <img src="{{ url_for('static', filename='images/placement-process.jpg') }}"
+                    class="img-fluid placement-process" />
+          </div>
+     </div>
+</div>
+
+
+
+<!-- CDC Team -->
+<div class="container-fluid mb-5 px-5">
+     <h3>Meet Our CDC Team</h3>
+     <div class="row" id="cdc-team">
+          <!-- Team Will Be Added Dynamically -->
+     </div>
+</div>
+
+
+<!-- Activities -->
+<div class="container-fluid mb-5 px-5">
+     <h3>Activities</h3>
+     <div class="row" id="activities-container">
+          <!-- Activities Will Be Added Dynamically -->
+     </div>
+</div>
+
+
+<!-- Students & Recruiters FeedBack and Contact Form -->
+<div class="container-fluid mb-5 px-5">
+     <div class="row">
+          <div class="col-md-6">
+               <div id="studentsFeedBack" class="container-fluid carousel slide" data-bs-ride="carousel">
+                    <h3 class="mb-4">Student Feedback</h3>
+                    <div class="carousel-indicators" data-bs-ride="carousel">
+                         <button type="button" data-bs-target="#studentsFeedBack" data-bs-slide-to="0" class="active"
+                              aria-current="true" aria-label="Slide 1"></button>
+                         <button type="button" data-bs-target="#studentsFeedBack" data-bs-slide-to="1"
+                              aria-label="Slide 2"></button>
+                         <button type="button" data-bs-target="#studentsFeedBack" data-bs-slide-to="2"
+                              aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                         <div class="carousel-item active">
+                              <div class="container">
+                                   <div class="feedback-card">
+                                        <div class="quote"><i class="bi bi-quote"></i></div>
+                                        <div class="message">Student 1 feedback!</div>
+                                        <div class="row">
+                                             <div class="col-md-4">
+                                                  <i class="bi bi-person-circle profile"></i>
+                                             </div>
+                                             <div class="col-md-8">
+                                                  <div class="details text-end">
+                                                       <div class="detail">Alex Johnson</div>
+                                                       <div class="detail">Business Administration
+                                                       </div>
+                                                       <div class="detail">Placed At Marketing Solutions LLC.
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+
+                         </div>
+                         <div class="carousel-item">
+                              <div class="container">
+                                   <div class="feedback-card">
+                                        <div class="quote"><i class="bi bi-quote"></i></div>
+                                        <div class="message">Student 2 feedback!</div>
+                                        <div class="row">
+                                             <div class="col-md-4">
+                                                  <i class="bi bi-person-circle profile"></i>
+                                             </div>
+                                             <div class="col-md-8">
+                                                  <div class="details text-end">
+                                                       <div class="detail">Alex Johnson</div>
+                                                       <div class="detail">Business Administration
+                                                       </div>
+                                                       <div class="detail">Placed At Marketing Solutions LLC.
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+
+                         </div>
+                         <div class="carousel-item">
+                              <div class="container">
+                                   <div class="feedback-card">
+                                        <div class="quote"><i class="bi bi-quote"></i></div>
+                                        <div class="message">Student 3 feedback!</div>
+                                        <div class="row">
+                                             <div class="col-md-4">
+                                                  <i class="bi bi-person-circle profile"></i>
+                                             </div>
+                                             <div class="col-md-8">
+                                                  <div class="details text-end">
+                                                       <div class="detail">Alex Johnson</div>
+                                                       <div class="detail">Business Administration
+                                                       </div>
+                                                       <div class="detail">Placed At Marketing Solutions LLC.
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+
+                         </div>
+                    </div>
+               </div>
+          </div>
+          <div class="col-md-6">
+               <div id="recruitersFeedBack" class="container-fluid carousel slide" data-bs-ride="carousel">
+                    <h3 class="mb-4">Recruiters Feedback</h3>
+                    <div class="carousel-indicators" data-bs-ride="carousel">
+                         <button type="button" data-bs-target="#recruitersFeedBack" data-bs-slide-to="0" class="active"
+                              aria-current="true" aria-label="Slide 1"></button>
+                         <button type="button" data-bs-target="#recruitersFeedBack" data-bs-slide-to="1"
+                              aria-label="Slide 2"></button>
+                         <button type="button" data-bs-target="#recruitersFeedBack" data-bs-slide-to="2"
+                              aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                         <div class="carousel-item active">
+                              <div class="container">
+                                   <div class="feedback-card">
+                                        <div class="quote"><i class="bi bi-quote"></i></div>
+                                        <div class="message">Recruiters 1 feedback!</div>
+                                        <div class="row">
+                                             <div class="col-md-4">
+                                                  <i class="bi bi-person-circle profile"></i>
+                                             </div>
+                                             <div class="col-md-8">
+                                                  <div class="details text-end">
+                                                       <div class="detail">Jhon Doe</div>
+                                                       <div class="detail">CEO
+                                                       </div>
+                                                       <div class="detail">Marketing Solutions LLC.
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+
+                         </div>
+                         <div class="carousel-item">
+                              <div class="container">
+                                   <div class="feedback-card">
+                                        <div class="quote"><i class="bi bi-quote"></i></div>
+                                        <div class="message">Recruiters 2 feedback!</div>
+                                        <div class="row">
+                                             <div class="col-md-4">
+                                                  <i class="bi bi-person-circle profile"></i>
+                                             </div>
+                                             <div class="col-md-8">
+                                                  <div class="details text-end">
+                                                       <div class="detail">Jhon Doe</div>
+                                                       <div class="detail">CEO
+                                                       </div>
+                                                       <div class="detail">Marketing Solutions LLC.
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+
+                         </div>
+                         <div class="carousel-item">
+                              <div class="container">
+                                   <div class="feedback-card">
+                                        <div class="quote"><i class="bi bi-quote"></i></div>
+                                        <div class="message">Recruiters 3 feedback!</div>
+                                        <div class="row">
+                                             <div class="col-md-4">
+                                                  <i class="bi bi-person-circle profile"></i>
+                                             </div>
+                                             <div class="col-md-8">
+                                                  <div class="details text-end">
+                                                       <div class="detail">Jhon Doe</div>
+                                                       <div class="detail">CEO
+                                                       </div>
+                                                       <div class="detail">Marketing Solutions LLC.
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+               <div class="modal-header text-white" style="background-color: var(--nuv-bg);">
+                    <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                         aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                    <form>
+                         <div class="mb-3">
+                              <label for="fullName" class="form-label">Full Name</label>
+                              <input type="text" class="form-control rounded-0" id="fullName"
+                                   placeholder="Enter your full name">
+                         </div>
+                         <div class="mb-3">
+                              <label for="email" class="form-label">Email address</label>
+                              <input type="email" class="form-control rounded-0" id="email"
+                                   placeholder="Enter your email">
+                         </div>
+                         <div class="mb-3">
+                              <label for="phone" class="form-label">Phone Number</label>
+                              <input type="tel" class="form-control rounded-0" id="phone"
+                                   placeholder="Enter your phone number">
+                         </div>
+                         <div class="mb-3">
+                              <label for="company" class="form-label">Company Name</label>
+                              <input type="text" class="form-control rounded-0" id="company"
+                                   placeholder="Enter your company name">
+                         </div>
+                         <div class="mb-3">
+                              <label for="message" class="form-label">Message</label>
+                              <textarea class="form-control rounded-0" id="message" rows="4"
+                                   placeholder="Enter your message"></textarea>
+                         </div>
+                         <button type="submit" class="btn btn-outline-nuv rounded-0 w-100 btn-block">Submit</button>
+                    </form>
+               </div>
+          </div>
+     </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="bg-dark text-white">
+     <div class="container">
+          <div class="row">
+               <div class="col-lg-3 py-2">
+                    <h5>QUICK LINKS</h5>
+                    <ul class="quick-links">
+                         <li><a href="#">Library</a></li>
+                         <li><a href="#">Admissions</a></li>
+                         <li><a href="#">In The Press</a></li>
+                         <li><a href="#">Research</a></li>
+                         <li><a href="#">Tenders</a></li>
+                         <li><a href="#">Privacy Policy</a></li>
+                         <li><a href="#">Terms and Conditions</a></li>
+                         <li><a href="#">Online Payment Terms and Conditions</a></li>
+                    </ul>
+               </div>
+               <div class="col-lg-3 py-2 ">
+                    <h5>NAVRACHANA UNIVERSITY</h5>
+                    <p>
+                         Vasna-Bhayli Road, <br>
+                         Vadodara - 391 410 <br>
+                         Gujarat, India <br>
+                         Phone: +91-265-2617000, 100 <br>
+                         Mail: nuv@nuv.ac.in
+                    </p>
+                    <div class="container-fluid links">
+                         <a href="#" class="bi bi-facebook"></a>
+                         <a href="#" class="bi bi-linkedin"></a>
+                         <a href="#" class="bi bi-twitter"></a>
+                         <a href="#" class="bi bi-instagram"></a>
+                         <a href="#" class="bi bi-youtube"></a>
+                    </div>
+               </div>
+               <div class="col-lg-3 py-2">
+                    <h5>Contact Information</h5>
+                    <p>
+                         Admission Inquiry: +91-9998345470 <br>
+                         Placement Cell: +91-9316988277 <br>
+                         Accounts Dept: +91-265-2617144 <br>
+                         HR Dept: +91-265-2617103 <br>
+                         WhatsApp: +91-9327843239 <br>
+                         Working Hours: 9am-5pm (Mon-Sat)
+                    </p>
+               </div>
+               <div class="col-lg-3 py-2">
+                    <div id="map" style="height: 300px;"></div>
+               </div>
+          </div>
+     </div>
+</footer>
+
+{% endblock %}

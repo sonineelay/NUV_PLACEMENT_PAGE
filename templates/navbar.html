@@ -1,0 +1,28 @@
+<header>
+    <div class="top-navbar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" width="300px" alt="Logo" />
+        </div>
+        <form class="search-bar" role="search">
+            <input type="search" placeholder="Search" aria-label="Search">
+            <i class="bi bi-search"></i>
+        </form>
+        <div class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
+    </div>
+    <nav class="" id="navbar">
+        <ul class="nav-links">
+            {% for item in navbar_content %}
+            <li class="{{ 'dropdown' if item[1] else '' }}">
+                <a href="#">{{ item[0] }}</a>
+                {% if item[1] %}
+                <ul class="submenu">
+                    {% for subitem in item[1] %}
+                    <li><a href="#">{{ subitem }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</header>

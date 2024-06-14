@@ -1,0 +1,24 @@
+<div id="sidebar" class="sidebar">
+     <div class="d-flex justify-content-between align-items-center w-100 p-2">
+          <div class="sidebar-logo">
+               <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" />
+          </div>
+          <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">
+               <i class="bi bi-x"></i>
+          </a>
+     </div>
+     {% for item in navbar_content %}
+
+     {% if not item[1] %}
+     <button class="simple-btn" href="#">{{ item[0] }}</button>
+     {% endif %}
+     {% if item[1] %}
+     <button class="dropdown-btn">{{ item[0] }}</button>
+     <div class="dropdown-container">
+          {% for subitem in item[1] %}
+          <a class="sub-items" href="#">{{ subitem }}</a>
+          {% endfor %}
+     </div>
+     {% endif %}
+     {% endfor %}
+</div>
