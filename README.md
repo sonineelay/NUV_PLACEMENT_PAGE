@@ -1,5 +1,7 @@
 # NUV CDC Page
 
+This Is Just A Web Page For Navrachana University Placement Page (https://nuv.ac.in/well-placed/)
+
 
 ## How to Run This App 
 Follow these steps to run the application locally:
