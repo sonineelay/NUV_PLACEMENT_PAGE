@@ -39,7 +39,7 @@
 header {
      position: fixed;
      width: 100%;
-     z-index: 10;
+     z-index: 12;
      background-color: white;
 }
 
@@ -114,6 +114,7 @@ header {
      width: 100%;
      font-size: 1.2rem;
      transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
+
      /* Add transition for opacity with delay */
 }
 
@@ -171,7 +172,7 @@ header {
      height: 100%;
      width: 0;
      position: fixed;
-     z-index: 10;
+     z-index: 12;
      top: 0;
      left: 0;
      background-color: rgb(207, 207, 207);
@@ -263,21 +264,60 @@ h3 {
 
 .welcome-section {
      width: 100%;
+     position: relative;
      background-color: #FFEFEA;
      color: var(--nuv-bg) !important;
 }
 
-.welcome-section h1 {
-     border-bottom: 1px solid var(--nuv-bg);
+
+
+#heroCarousel {
+     position: absolute;
+     z-index: 10;
+     /* Full viewport height */
 }
 
-.col-xl-6 {
+#heroCarousel .carousel-inner {
+     height: 100%;
+     /* Ensure inner items take full height */
+}
+
+#heroCarousel .carousel-item {
+     height: 100%;
+     /* Ensure each carousel item takes full height */
      display: flex;
-     justify-content: center;
      align-items: center;
+     justify-content: center;
 }
 
-.btn-outline-nuv {
+#heroCarousel .carousel-item img {
+     max-height: 100%;
+     width: 100%;
+     /* Ensure image scales correctly */
+     /* Maintain aspect ratio */
+}
+
+.welcome-section #front-section {
+     position: absolute;
+     /* Ensures z-index works */
+     /* background-color: #000; */
+     backdrop-filter: blur(2px);
+     background-color: #ffffffa5;
+     /* Replace with your image path */
+     z-index: 11;
+     background-size: cover;
+     background-position: center;
+}
+
+
+.heroItems button:hover {
+     color: white;
+     background-color: var(--nuv-bg);
+}
+
+
+.btn-outline-nuv,
+.btn-outline-nuv:focus {
      border: 1px solid var(--nuv-bg);
      color: var(--nuv-bg);
      background-color: none;
@@ -297,7 +337,7 @@ h3 {
      transition: transform 0.5s ease;
 }
 
-.carousel-item img:hover {
+#logoCarousel .carousel-item img:hover {
      transform: scale(1.1);
 }
 
@@ -329,14 +369,9 @@ h3 {
 
 
 .content-tag {
-     font-size: 1.5rem;
-     margin: 20px 10px;
      display: block;
 }
 
-.placement-process {
-     height: 500px;
-}
 
 /* ------------------------- */
 
@@ -432,9 +467,34 @@ footer h5 {
      border-radius: 0%;
 }
 
-.insta-post {
+.infinite-container {
+     overflow: hidden;
+     width: 100%;
+}
+
+.infinite-container .wrap {
+     display: grid;
+     grid-auto-flow: column;
+     justify-items: stretch;
+     animation: slide 12s linear infinite;
+
+}
+
+.wrap .item {
+     border-radius: 0px;
      border: 5px solid var(--nuv-bg);
-     border-radius: 0%;
+     object-fit: cover;
+     margin: 20px
+}
+
+@keyframes slide {
+     0% {
+          transform: translateX(0);
+     }
+
+     100% {
+          transform: translateX(-50%);
+     }
 }
 
 .feedback-card {
@@ -443,7 +503,6 @@ footer h5 {
      border-radius: 10px;
      padding: 15px;
      margin: 10px;
-     width: 600px !important;
      border: 3px solid var(--nuv-bg);
 }
 
@@ -462,13 +521,15 @@ footer h5 {
      font-weight: bold;
      padding: 10px;
      margin-bottom: 10px;
-     font-size: 2rem;
 }
 
 
 .feedback-card .details {
-     font-size: 1.2rem;
      color: #666666;
+}
+
+.feedback-card .profile {
+     color: var(--nuv-bg);
 }
 
 .feedback-card .details .detail {
@@ -476,10 +537,6 @@ footer h5 {
      color: #16b7c2;
 }
 
-.feedback-card .profile {
-     font-size: 4rem;
-     color: var(--nuv-bg);
-}
 
 #studentsFeedBack .carousel-item .container,
 #recruitersFeedBack .carousel-item .container {
@@ -556,9 +613,23 @@ footer h5 {
      color: #b32d00;
 }
 
+
+
 /* Responsive design */
 /* For screens less than 768px */
 @media screen and (max-width: 1199px) {
+
+     .welcome-section,
+     #heroCarousel .carousel-inner,
+     .welcome-section #front-section {
+          height: 300px !important;
+     }
+
+     #front-section img {
+          width: 100px;
+          height: 170px;
+     }
+
      main {
           padding: 55px 0px 0px 0px !important;
      }
@@ -568,6 +639,69 @@ footer h5 {
           font-size: 1.8rem;
      }
 
+     .heroItems h1 {
+          font-size: 1.5rem;
+          font-weight: 800;
+          padding: 10px 0px;
+     }
+
+     .heroItems h2 {
+          padding-top: 20px;
+          font-size: 1.4rem;
+          font-weight: 800;
+     }
+
+     .heroItems button {
+          border: 1px solid var(--nuv-bg);
+          color: var(--nuv-bg);
+          font-size: 1.2rem;
+          font-weight: 600;
+          background-color: none;
+     }
+
+
+     .content-tag {
+          font-size: 1rem;
+          margin: 10px 5px;
+     }
+
+     .placement-process {
+          height: 500px;
+     }
+
+
+     .infinite-container .wrap {
+          grid-auto-columns: 200px;
+
+     }
+
+     #top {
+          width: 300px;
+          height: 300px;
+     }
+
+     .wrap .item img {
+          width: 150px;
+          height: 150px;
+     }
+
+     .feedback-card {
+          width: 300px;
+     }
+
+     .feedback-card .message {
+          font-size: 1.2rem;
+     }
+
+
+     .feedback-card .details {
+          font-size: 1rem;
+          font-weight: 700;
+     }
+
+     .feedback-card .profile {
+          font-size: 3rem;
+     }
 
      .search-bar {
           display: none;
@@ -611,8 +745,55 @@ footer h5 {
 
 /* For XL screens and above (1200px and up) */
 @media screen and (min-width: 1200px) {
+
+     .welcome-section,
+     #heroCarousel .carousel-inner,
+     .welcome-section #front-section {
+          height: 700px !important;
+     }
+
+     #front-section img {
+          width: 300px;
+          height: 100%;
+     }
+
      main {
           padding: 140px 0px 0px 0px !important;
+     }
+
+     .heroItems h1 {
+          font-size: 4rem;
+          font-weight: 800;
+          padding: 20px 0px;
+     }
+
+     .heroItems h2 {
+          font-size: 2.5rem;
+          font-weight: 700;
+     }
+
+     .heroItems button {
+          border: 1px solid var(--nuv-bg);
+          color: var(--nuv-bg);
+          font-size: 1.8rem;
+          font-weight: 600;
+          background-color: none;
+     }
+
+
+     .infinite-container .wrap {
+          grid-auto-columns: 350px;
+
+     }
+
+     #top {
+          width: 500px;
+          height: 500px;
+     }
+
+     .wrap .item img {
+          width: 300px;
+          height: 300px;
      }
 
      .carousel-inner {
@@ -628,6 +809,35 @@ footer h5 {
 
      #chart-container canvas {
           height: 330px;
+     }
+
+     .feedback-card {
+          width: 600px;
+     }
+
+     .feedback-card .message {
+          font-size: 2rem;
+     }
+
+
+
+
+     .content-tag {
+          font-size: 1.5rem;
+          margin: 20px 10px;
+     }
+
+     .placement-process {
+          height: 500px;
+     }
+
+     .feedback-card .details {
+          font-size: 1.2rem;
+          font-weight: 800;
+     }
+
+     .feedback-card .profile {
+          font-size: 4rem;
      }
 
      .carousel-indicators button {

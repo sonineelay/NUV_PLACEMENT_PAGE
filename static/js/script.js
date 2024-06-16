@@ -14,6 +14,15 @@ $(document).ready(async function () {
           });
      });
 
+     // Hero Section
+     // Initialize the carousel
+     $('#heroCarousel').carousel({
+          interval: 1500, // Auto-scroll interval in milliseconds
+          pause: 'hover' // Pause on hover
+     });
+
+
+
      // Fetching Chart Data and using it 
      fetch('/charts_data')
           .then(response => response.json())
@@ -113,13 +122,13 @@ function instaPosts(containerID) {
 
           // Create the card element using a template literal
           const card = $(`
-                 <div class="col-lg-2 col-md-6 d-flex justify-content-center">
-                     <img src="/static/images/testimonials/${data.img}" class="mb-4 insta-post" width="300px" height="300px" alt="Instagram Post">
-                 </div>
+          <div class="item m-2">
+          <img src="/static/images/testimonials/${data.img}" class="mb-4 insta-post" alt="Instagram Post">
+          </div>
              `);
 
           // Append the card to the container
-          $("#" + containerID).append(card);
+          $("#" + containerID + " .wrap").append(card);
      });
 }
 
@@ -131,16 +140,14 @@ async function activitiesData(containerID) {
           const data = cdc_data[key]
           // Create the card element
           const card = $(`
-        <div class="col-md-6 col-lg-4">
-            <div class="card mb-4 shadow-sm cdc-team">
-                <img src="/static/images/activities/${data.img}" class="card-img-top" alt="${key}">
-                <div class="card-body">
-                <h4 class="card-title fw-bold">${data.title}</h4>
-            </div>
-        </div>`);
+          <div class="item">
+          <img src="/static/images/activities/${data.img}" class="mb-4" alt="${key}">
+          <span class="fs-4 fw-bold">${data.title}</span>
+          </div>
+          `);
 
           // Append the card to the container
-          $("#" + containerID).append(card);
+          $("#" + containerID + " .wrap").append(card);
      });
 }
 
