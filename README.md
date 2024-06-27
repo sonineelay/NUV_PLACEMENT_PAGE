@@ -2,6 +2,7 @@
 
 This Is Just A Web Page For Navrachana University Placement Page (https://nuv.ac.in/well-placed/)
 
+Hosted On (https://nuv-placement-page.onrender.com/)
 
 ## How to Run This App 
 Follow these steps to run the application locally:
